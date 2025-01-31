@@ -121,4 +121,45 @@ After merging `t1_user_active_min.csv` (user activity data) with `t2_user_varian
 
 ## 📂 Part 3 : Statistical Analysis (10 Points)
 
+Using the organized data from **Part 2**, we conducted statistical analysis to determine whether there is a significant difference between the **control group (`variant_number = 0`)** and the **treatment group (`variant_number = 1`)**.
+### **1. Is there a statistical difference between Group 1 and Group 2?**  
+To test whether there is a significant difference in user activity between the two groups, we performed an **independent t-test**. The results are:  
+
+- **T-test Statistic:** `-1.4674`  
+- **P-value:** `0.1423`  
+
+Since the **p-value (0.1423) is greater than 0.05**, we fail to reject the null hypothesis. This means that **there is no statistically significant difference** between the control and treatment groups in terms of active minutes.
+
+### **2. What are the mean and median for both groups?**  
+The computed mean and median values for both groups are as follows:
+
+| Group            | Mean Active Minutes | Median Active Minutes |
+|-----------------|--------------------|----------------------|
+| **Control Group** (variant_number = 0) | **35.34** | **5.0** |
+| **Treatment Group** (variant_number = 1) | **40.24** | **7.0** |
+
+Although the treatment group shows a slightly higher mean and median **(40.24 vs. 35.34 and 7.0 vs. 5.0, respectively)**, the difference is **not statistically significant**.
+
+
+### **3. What conclusions can you draw from this data?**  
+Based on the statistical analysis:  
+✅ **The treatment group shows a slightly higher average and median active time compared to the control group.**  
+❌ **However, the t-test results indicate that this difference is not statistically significant (p-value > 0.05).**  
+⚠ **This suggests that the new platform layout did not have a measurable impact on user engagement.**  
+
+
 ---
+
+## 📂 Part 4: Digging a Little Deeper (25 Points)
+
+---
+
+## 📂 Part 5: Digging Even Deeper (25 Points)
+
+---
+
+## 📂 Part 6: Exploring Other Conclusions (10 Points)
+
+---
+
+## 📂 Part 7: Summarizing Results (10 Points)

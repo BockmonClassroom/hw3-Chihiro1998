@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-
 from scipy.stats import ttest_ind
 
 # 定义数据文件夹路径
@@ -98,3 +97,4 @@ print(f"Data Size After Removing Outliers: {len(filtered_data)}")
 # 重新保存去除异常值后的数据
 filtered_data.to_csv(os.path.join(data_dir, "filtered_data.csv"), index=False)
 print("Filtered data saved as 'filtered_data.csv'")
+
