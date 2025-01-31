@@ -114,7 +114,7 @@ The reorganized data should look like this:
 This format will allow us to calculate **mean, median, and statistical significance** between the control and treatment groups.  
 
 ### 5.	Organize the data.
-After merging t1_users_active_mins.csv (user activity data) with t2_users_variant.csv (experiment group assignments), we successfully structured the dataset（Data/merged_t1_t2.csv） for statistical analysis. The merged dataset now contains an additional column, variant_number, which labels users as either control (0) or treatment (1) groups, enabling direct comparison of user engagement between these two groups.
+After merging `t1_user_active_min.csv` (user activity data) with `t2_user_variant.csv` (experiment group assignments), we successfully structured the dataset（Data/merged_t1_t2.csv） for statistical analysis. The merged dataset now contains an additional column, variant_number, which labels users as either control (0) or treatment (1) groups, enabling direct comparison of user engagement between these two groups.
 
 ---
 
