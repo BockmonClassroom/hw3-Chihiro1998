@@ -51,7 +51,6 @@ treatment_median = treatment_group["active_mins"].median()
 print(f"Control Group - Mean: {control_mean}, Median: {control_median}")
 print(f"Treatment Group - Mean: {treatment_mean}, Median: {treatment_median}")
 
-from scipy.stats import ttest_ind
 
 # 执行 t-test
 t_stat, p_value = ttest_ind(control_group["active_mins"], treatment_group["active_mins"], equal_var=False)
