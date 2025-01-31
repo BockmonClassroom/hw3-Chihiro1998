@@ -1,8 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tQ2iv1EY)
 # HW3 - Hypothesis Testing / A/B Testing
 
-# Hypothesis Testing / A/B Testing
-
 **Author:** Yuchen (Olivia) Kuang  
 **Date:** 1/31/2025  
 
@@ -14,7 +12,7 @@ This project focuses on **A/B testing and hypothesis testing** to analyze whethe
 ## 📂 Part 1 : Getting to know your data (5 Points)  
 We are given **four CSV files** and **one text file** containing essential data for this study. Below is a description of each dataset:
 
-### 📌 `t1_users_active_mins.csv`  
+### 📌 t1_users_active_mins.csv
 This file records **user activity minutes** on the platform for specific dates.
 
 - **Columns:**
@@ -28,7 +26,7 @@ This file records **user activity minutes** on the platform for specific dates.
 
 ---
 
-### 📌 `t2_users_variant.csv`  
+### 📌 t2_users_variant.csv
 This file contains **experiment group assignments** for each user.
 
 - **Columns:**
@@ -43,7 +41,7 @@ This file contains **experiment group assignments** for each user.
 
 ---
 
-### 📌 `t3_users_active_mins_pre.csv`  
+### 📌 t3_users_active_mins_pre.csv
 This file contains **user activity data before the experiment started**, following the same format as `t1_users_active_mins.csv`.
 
 - **Columns:**
@@ -57,7 +55,7 @@ This file contains **user activity data before the experiment started**, followi
 
 ---
 
-### 📌 `t4_users_attributes.csv`  
+### 📌 t4_users_attributes.csv
 This file provides **user demographic and behavioral attributes**.
 
 - **Columns:**
@@ -71,7 +69,7 @@ This file provides **user demographic and behavioral attributes**.
 
 ---
 
-### 📌 `table_schema.txt`  
+### 📌 table_schema.txt 
 This file contains **metadata and schema definitions** for all datasets.
 
 - **Purpose:**  
@@ -83,7 +81,7 @@ This file contains **metadata and schema definitions** for all datasets.
 ## 📂 Part 2 : Organizing the Data (15 Points)  
 
 ### 1.	What is the overall objective of this study?
-- The primary objective of this study is to determine whether the new platform layout increases user engagement by analyzing user activity before and after the experiment. This is done through A/B testing, where users are divided into control (variant_number = 0) and treatment (variant_number = 1) groups. By comparing the active minutes of users in both groups, we can statistically evaluate whether the experiment had a significant impact.
+The primary objective of this study is to determine whether the new platform layout increases user engagement by analyzing user activity before and after the experiment. This is done through A/B testing, where users are divided into control (variant_number = 0) and treatment (variant_number = 1) groups. By comparing the active minutes of users in both groups, we can statistically evaluate whether the experiment had a significant impact.
 
 ### 2.	What data do we need to reach that objective?
 
