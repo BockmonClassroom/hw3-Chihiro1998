@@ -12,7 +12,7 @@ This project focuses on **A/B testing and hypothesis testing** to analyze whethe
 ## 📂 Part 1 : Getting to know your data (5 Points)  
 We are given **four CSV files** and **one text file** containing essential data for this study. Below is a description of each dataset:
 
-### 📌 t1_users_active_mins.csv
+### 📌 t1_user_active_min.csv
 This file records **user activity minutes** on the platform for specific dates.
 
 - **Columns:**
@@ -24,7 +24,7 @@ This file records **user activity minutes** on the platform for specific dates.
   - Measures user engagement.  
   - Helps evaluate whether the experiment influenced time spent on the platform.  
 
-### 📌 t2_users_variant.csv
+### 📌 t2_user_variant.csv
 This file contains **experiment group assignments** for each user.
 
 - **Columns:**
@@ -38,7 +38,7 @@ This file contains **experiment group assignments** for each user.
   - Enables A/B testing to compare user activity.  
 
 
-### 📌 t3_users_active_mins_pre.csv
+### 📌 t3_user_active_min_pre.csv
 This file contains **user activity data before the experiment started**, following the same format as `t1_users_active_mins.csv`.
 
 - **Columns:**
@@ -50,7 +50,7 @@ This file contains **user activity data before the experiment started**, followi
   - Allows for **before-and-after** analysis.  
   - Helps assess whether the new platform layout had an impact on engagement.  
 
-### 📌 t4_users_attributes.csv
+### 📌 t4_user_attributes.csv
 This file provides **user demographic and behavioral attributes**.
 
 - **Columns:**
@@ -78,6 +78,10 @@ This file contains **metadata and schema definitions** for all datasets.
 The primary objective of this study is to determine whether the new platform layout increases user engagement by analyzing user activity before and after the experiment. This is done through A/B testing, where users are divided into control (variant_number = 0) and treatment (variant_number = 1) groups. By comparing the active minutes of users in both groups, we can statistically evaluate whether the experiment had a significant impact.
 
 ### 2.	What data do we need to reach that objective?
+To conduct this analysis, we need the following data:
+- User activity data (t1_user_active_min.csv) → To track how long users spend on the platform.
+- Experiment group assignment (t2_user_variant.csv) → To identify whether a user is in the control or treatment group.
+By merging these datasets, we can compare average active minutes between the two groups and perform statistical tests.
 
 
 ### 3.	How is the data in t1 currently organized?
