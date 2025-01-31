@@ -24,8 +24,6 @@ This file records **user activity minutes** on the platform for specific dates.
   - Measures user engagement.  
   - Helps evaluate whether the experiment influenced time spent on the platform.  
 
----
-
 ### 📌 t2_users_variant.csv
 This file contains **experiment group assignments** for each user.
 
@@ -39,7 +37,6 @@ This file contains **experiment group assignments** for each user.
   - Distinguishes between **control** and **treatment groups**.  
   - Enables A/B testing to compare user activity.  
 
----
 
 ### 📌 t3_users_active_mins_pre.csv
 This file contains **user activity data before the experiment started**, following the same format as `t1_users_active_mins.csv`.
@@ -52,8 +49,6 @@ This file contains **user activity data before the experiment started**, followi
 - **Purpose:**  
   - Allows for **before-and-after** analysis.  
   - Helps assess whether the new platform layout had an impact on engagement.  
-
----
 
 ### 📌 t4_users_attributes.csv
 This file provides **user demographic and behavioral attributes**.
