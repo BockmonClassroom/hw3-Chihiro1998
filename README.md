@@ -62,7 +62,6 @@ This file provides **user demographic and behavioral attributes**.
   - Enables segmentation analysis based on **user behavior and demographics**.  
   - Helps identify whether specific user groups were more affected by the experiment.  
 
----
 
 ### 📌 table_schema.txt 
 This file contains **metadata and schema definitions** for all datasets.
