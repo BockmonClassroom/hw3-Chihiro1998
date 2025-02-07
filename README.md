@@ -76,8 +76,8 @@ The primary objective of this study is to determine whether the new platform lay
 
 ### 2. What data do we need to reach that objective?
 To conduct this analysis, we need the following datasets:
-•	User activity data (t1_users_active_mins.csv) → Tracks how long users spend on the platform.
-•	Experiment group assignment (t2_users_variant.csv) → Identifies whether a user is in the control or treatment group.
+-	User activity data (t1_users_active_mins.csv) → Tracks how long users spend on the platform.
+-	Experiment group assignment (t2_users_variant.csv) → Identifies whether a user is in the control or treatment group.
 By merging these datasets, we can compare average active minutes between the two groups and perform statistical tests to determine the impact of the new platform layout.
 
 ### 3. How is the data in t1 currently organized?
@@ -89,9 +89,9 @@ Currently, the data does not include experiment group labels, making it difficul
 
 ### 4. How should it be organized for better utility?
 To make the data useful for statistical analysis, we need to:
-1.	Merge t1_user_active_min.csv with t2_user_variant.csv using uid as the key.
-2.	Add the variant_number column to label each user as control (0) or treatment (1).
-3.	Ensure the data is structured for comparison, allowing us to analyze activity levels per experiment group.
+-	Merge t1_user_active_min.csv with t2_user_variant.csv using uid as the key.
+-	Add the variant_number column to label each user as control (0) or treatment (1).
+-	Ensure the data is structured for comparison, allowing us to analyze activity levels per experiment group.
 The reorganized data should look like this:
 ![image](https://github.com/user-attachments/assets/bbcceadd-7ba9-4100-9533-73813ea2b529)
 This format will allow us to calculate mean, median, and statistical significance between the control and treatment groups.  
