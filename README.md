@@ -94,6 +94,7 @@ To make the data useful for statistical analysis, we need to:
 -	Ensure the data is structured for comparison, allowing us to analyze activity levels per experiment group.
 The reorganized data should look like this:
 ![image](https://github.com/user-attachments/assets/bbcceadd-7ba9-4100-9533-73813ea2b529)
+
 This format will allow us to calculate mean, median, and statistical significance between the control and treatment groups.  
 
 ### 5. Organize the data.
@@ -104,15 +105,17 @@ After merging `t1_user_active_min.csv` (user activity data) with `t2_user_varian
 ## 📂 Part 3 : Statistical Analysis (10 Points)
 
 ### 1. Is there a statistical difference between Group 1 and Group 2?
-- **T-test Statistic:** `-1.4674`  
+Using the organized data from Part 2, we conducted statistical analysis to determine whether there is a significant difference between the control group (`variant_number = 0`) and the treatment group (`variant_number = 1`). To test whether there is a significant difference in user activity between the two groups, we performed an independent t-test. The results are:  
+- **T-test Statistic:** `-1.4674`
 - **P-value:** `0.1423`  
-- Since p-value > 0.05, there is **no statistically significant difference** between the two groups.
+Since the p-value (0.1423) is greater than 0.05, we fail to reject the null hypothesis. This means that there is no statistically significant difference between the control and treatment groups in terms of active minutes.
 
 ### 2. What are the mean and median for both groups?
 | Group | Mean Active Minutes | Median Active Minutes |
 |-----------------|--------------------|----------------------|
 | **Control** (0) | **35.34** | **5.0** |
 | **Treatment** (1) | **40.24** | **7.0** |
+Although the treatment group shows a slightly higher mean and median (40.24 vs. 35.34 and 7.0 vs. 5.0, respectively), the difference is not statistically significant.
 
 ### 3. What conclusions can you draw?
 ✅ The treatment group shows slightly higher engagement.  
@@ -122,9 +125,35 @@ After merging `t1_user_active_min.csv` (user activity data) with `t2_user_varian
 ---
 
 ## 📂 Part 4: Digging a Little Deeper (25 Points)
-- The dataset is **not normally distributed**.
-- **Outliers exist** (e.g., users logging more than 1440 minutes/day).
-- After removing outliers, **a significant difference emerges (p < 0.05).**
+
+### 1. Can you trust that the results? Why or why not? 
+The results should be interpreted with caution. Factors like outliers, data distribution, and missing data can impact the accuracy. Further checks are needed.
+
+### 2.  Is the data normally distributed?
+Based on the Shapiro-Wilk test results, both the control group (p-value=1.15e-215) and treatment group (p-value=4.50e-182) have extremely low p-values (<< 0.05). This strongly indicates that the data does not follow a normal distribution.
+
+### 3.  Plot a box plot of group 1 and group 2
+![image](https://github.com/user-attachments/assets/41da1870-fafd-464f-8335-926dde25161f)
+
+### 4.  Are there any outliers?
+We identify outliers using the Interquartile Range (IQR) method. The Interquartile Range (IQR) method is a common way to detect outliers in a dataset. We can calculate the first quartile (Q1) and third quartile (Q3) to determine the IQR. Outliers are typically defined as values that fall below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR. After removing, there are 931953 rows left.
+
+### 5. What might be causing those outliers? (Hint, look at the data in t1. What is the maximum time a user should possibly have?).
+Users logging more than 1440 minutes (24 hours) of activity in a single day, which is physically impossible. These values could be due to data entry errors or logging artifacts. We can identify 172 outliers in the dataset.
+
+### 6. Remove any data point that might be causing outliers.
+We remove the outliers of the first table by filtering out the rows where the active minutes are less than or equal to 1440. After removing, there are 1066230 rows left.
+
+### 7. Redo part 2 and 3 with the new data without those data points.
+We use the cleaned dataset to redo the statistical analysis. The t-test results are as follows:
+-	T-test Statistic: -30.686846737487123
+-	P-value: 2.219758340477041e-206
+
+### 8. What is the new conclusion based on the new data?
+The p-value is significantly less than 0.05, indicating a statistically significant difference between the control and treatment groups in terms of active minutes.
+
+
+
 
 ---
 
