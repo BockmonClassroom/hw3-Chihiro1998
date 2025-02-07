@@ -72,30 +72,32 @@ This file contains **metadata and schema definitions** for all datasets.
 ## 📂 Part 2 : Organizing the Data (15 Points)  
 
 ### 1. What is the overall objective of this study?
-The goal of this study is to analyze user engagement before and after an experiment. Specifically, we want to:
-- Compare active minutes between the control group and the treatment group.
-- Determine if the new platform changes impact user engagement.
-- Use statistical methods to test if the changes are significant.
+The primary objective of this study is to determine whether the new platform layout increases user engagement by analyzing user activity before and after the experiment. This is done through A/B testing, where users are divided into control (variant_number = 0) and treatment (variant_number = 1) groups. By comparing the active minutes of users in both groups, we can statistically evaluate whether the experiment had a significant impact.
 
 ### 2. What data do we need to reach that objective?
-For this section, we focus on two datasets:
-
-✅ `t1_users_active_mins.csv` (User Activity Data)  
-✅ `t2_users_variant.csv` (Experiment Group Assignment)  
-
-These two datasets allow us to analyze engagement by experiment group.
+To conduct this analysis, we need the following datasets:
+•	User activity data (t1_users_active_mins.csv) → Tracks how long users spend on the platform.
+•	Experiment group assignment (t2_users_variant.csv) → Identifies whether a user is in the control or treatment group.
+By merging these datasets, we can compare average active minutes between the two groups and perform statistical tests to determine the impact of the new platform layout.
 
 ### 3. How is the data in t1 currently organized?
-The `t1_user_active_min.csv` file contains user activity logs, where each row represents **a specific user’s active minutes on a given date**.
+The t1_user_active_min.csv file contains user activity logs, where each row represents a specific user’s active minutes on a given date. It has the following structure:
+ ![image](https://github.com/user-attachments/assets/4f8ef152-25ac-4ac9-8c8b-a0128b61dfa2)
+
+Currently, the data does not include experiment group labels, making it difficult to analyze differences between the control and treatment groups.  
+
 
 ### 4. How should it be organized for better utility?
-To make the data useful for statistical analysis, we need to:  
-1. **Merge `t1_user_active_min.csv` with `t2_user_variant.csv`** using `uid` as the key.  
-2. **Add the `variant_number` column** to label each user as **control (0)** or **treatment (1)**.  
-3. **Ensure the data is structured for comparison**, allowing us to analyze activity levels per experiment group.  
+To make the data useful for statistical analysis, we need to:
+1.	Merge t1_user_active_min.csv with t2_user_variant.csv using uid as the key.
+2.	Add the variant_number column to label each user as control (0) or treatment (1).
+3.	Ensure the data is structured for comparison, allowing us to analyze activity levels per experiment group.
+The reorganized data should look like this:
+![image](https://github.com/user-attachments/assets/bbcceadd-7ba9-4100-9533-73813ea2b529)
+This format will allow us to calculate mean, median, and statistical significance between the control and treatment groups.  
 
 ### 5. Organize the data.
-After merging, the dataset (Data/merged_t1_t2.csv) now includes experiment labels, enabling statistical analysis.
+After merging `t1_user_active_min.csv` (user activity data) with `t2_user_variant.csv` (experiment group assignments), we successfully structured the dataset (Data/merged_t1_t2.csv) for statistical analysis. The merged dataset now contains an additional column, variant_number, which labels users as either control (0) or treatment (1) groups, enabling direct comparison of user engagement between these two groups.
 
 ---
 
