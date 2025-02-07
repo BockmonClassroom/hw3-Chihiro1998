@@ -152,31 +152,45 @@ We use the cleaned dataset to redo the statistical analysis. The t-test results 
 ### 8. What is the new conclusion based on the new data?
 The p-value is significantly less than 0.05, indicating a statistically significant difference between the control and treatment groups in terms of active minutes.
 
-
-
-
 ---
 
 ## 📂 Part 5: Digging Even Deeper (25 Points)
-- **Incorporating pre-experiment data (t3)** shows a statistically significant impact of the new layout.
-- The treatment group had a substantial increase in engagement.
+
+### 1. Why do we care about the data from t3?
+The t3 dataset (Pre-Experiment Activity Data) is critical for ensuring that our experiment is fair, unbiased, and statistically valid. Without it, we risk drawing incorrect conclusions about the impact of the new platform layout.
+
+### 2.Accounting for the data from t3 rerun part 2 and 3. 
+We first filter out the outliers from t3 using the same strategy as t1, and merge it with t2. A t-test between these two merged data is conduct.
+
+### 3.Accounting for the data from t3 rerun part 2 and 3. 
+
+The results indicate a statistically significant difference between the control and treatment groups (p < 0.05). After normalizing for pre-experiment activity, the treatment group shows a substantial increase in active minutes (mean: 163.97, median: 12), while the control group exhibits a decline in engagement (mean: -47.10, median: -6). The large t-statistic (-17.99) and extremely low p-value (1.36e-71) suggest that the experiment had a real and significant impact, leading to an increase in user engagement for the treatment group. This supports the conclusion that the new platform layout effectively increased user activity.
 
 ---
 
 ## 📂 Part 6: Exploring Other Conclusions (10 Points)
-- **Gender Differences**: Females and unknown gender users showed higher engagement increases.
-- **User Type Impact**: Contributors and readers benefited the most from the new layout.
+Can you come up with any other conclusion with the data given in t4? If so, what are they? This is open ended. This is left open ended to allow you to further explore the data that is given.
+
+**Gender Differences** – Some gender groups responded more positively to the treatment, indicating the new platform layout might appeal differently based on gender. As shown in the left figure, the treatment group increased active minutes across all gender categories. Males had the highest engagement overall, but females and unknown gender users showed a relatively larger percentage increase from the treatment. This suggests that the new platform layout benefited all genders, but its impact might have been stronger for underrepresented groups.
+
+**User Type Impact** – Contributors and readers showed higher engagement increases, while non-readers and new users had a smaller effect. As shown in the right figure, contributors and readers had the highest engagement levels and showed significant improvement with the treatment. Non-readers and new users also saw an increase but remained at much lower engagement levels. This indicates that already engaged users (readers & contributors) benefited the most, while less active users (non-readers, new users) may require additional engagement strategies.
+![image](https://github.com/user-attachments/assets/a32a154e-384e-4770-a6ee-b1208caa3822)
+![image](https://github.com/user-attachments/assets/4d301035-a478-4099-b95a-6d99540e5e16)
 
 ---
 
 ## 📂 Part 7: Summarizing Results (10 Points)
+Write a summary for each part of this assignment and how it impacted your results.
 
-- **Part 1**: Explored datasets.
-- **Part 2**: Merged data for statistical testing.
-- **Part 3**: Found no significant impact at first.
-- **Part 4**: Outlier removal revealed significant differences.
-- **Part 5**: Pre-experiment data confirmed impact.
-- **Part 6**: User attributes influenced engagement.
+In part1, we explored five data files to understand their contents and purpose. The four CSV files contain user activity data (T1, T3), experiment group assignments (T2), and user attributes (T4), while the schema file provides metadata. This step ensures we have a clear understanding of the dataset before conducting further analysis.
+In part 2, we merged user activity data (T1) with experiment group assignments (T2) using uid as the key. This allowed us to label users as either control (0) or treatment (1) groups. The merged dataset enables direct comparisons of user engagement between the two groups and provides the foundation for evaluating the impact of the new platform layout.
 
-### **Final Conclusion**
-The **new platform layout effectively increased user engagement**, particularly among certain user groups. However, **raw data initially suggested no impact due to outliers and pre-experiment differences.** Accounting for these factors reveals a **statistically significant improvement.**
+In part3, using the merged dataset from Part 2, we conducted statistical tests to compare user engagement between the control group (variant_number = 0) and the treatment group (variant_number = 1). While the treatment group had higher average active minutes, the results suggest that the new platform layout did not significantly impact user engagement.
+Additional factors (e.g., user type, long-term behavior changes) may need to be explored for deeper insights.
+
+In part4, after addressing potential data inconsistencies, including outliers and non-normal distributions, we refined our analysis to ensure more accurate conclusions. Initially, the t-test suggested no significant difference between the control and treatment groups, but after cleaning the data, the new t-test yielded a highly significant p-value (2.22e-206), confirming a substantial difference in engagement. This suggests that the treatment group experienced a real and meaningful increase in active minutes due to the new platform layout. Additionally, further exploration using demographic data revealed that contributors and readers showed the highest increase in engagement, while non-readers and new users exhibited less impact. These findings highlight the effectiveness of the experiment while suggesting that additional interventions may be needed to engage certain user segments.
+
+In part5, to ensure the experiment results are unbiased and valid, we incorporated pre-experiment activity (T3 data) into our analysis. After filtering out outliers using the same method as T1, we merged T3 with T2 and conducted a t-test on the normalized data. The results show a statistically significant increase in engagement for the treatment group (p < 0.05). After accounting for pre-experiment activity, the treatment group had a substantial increase in active minutes (mean: 163.97, median: 12), while the control group experienced a decline (mean: -47.10, median: -6). The large t-statistic (-17.99) and extremely low p-value (1.36e-71) confirm that the new platform layout had a real and significant impact on user engagement.
+
+In part6, the analysis of user demographics (T4 data) revealed that females and unknown gender users showed a higher percentage increase in engagement. Additionally, contributors and readers had the most significant engagement boosts, while non-readers and new users saw smaller improvements, indicating that already active users benefited the most. 
+
